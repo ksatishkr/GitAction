@@ -1,0 +1,23 @@
+name: C++ Build and Run
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install C++ compiler
+      run: sudo apt-get update && sudo apt-get install -y g++
+
+    - name: Compile C++ script
+      run: g++ ./Pytest/script/script.cpp -o script
+
+    - name: Execute script
+      run: ./script
