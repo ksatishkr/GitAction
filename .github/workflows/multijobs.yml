@@ -1,0 +1,30 @@
+name: multiJobs action
+on: [push]
+jobs: 
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: single line comment
+        run: echo this is single line comment
+      - name: multi-line comments
+        run: echo multiple-lne
+
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: single line comment
+        run: echo this is single line comments
+      - name: multiple-line runner
+        run: echo this is multiple line comments
+
+  macos: 
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: single line comment
+        run: echo this is single line comment
+      - name: multiple line comments
+        run: echo this is 
+      
