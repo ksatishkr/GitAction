@@ -10,7 +10,7 @@ jobs:
       - name: multi-line comments
         run: |
           echo this is for testing code
-          echo test, for testng perpose
+               tetes, for testng perpose
 
   ubuntu:
     runs-on: ubuntu-latest
