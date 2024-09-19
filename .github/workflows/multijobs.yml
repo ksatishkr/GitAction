@@ -8,7 +8,9 @@ jobs:
       - name: single line comment
         run: echo this is single line comment
       - name: multi-line comments
-        run: echo multiple-lne
+        run: |
+          echo this is for testing code
+          echo test, for testng perpose
 
   ubuntu:
     runs-on: ubuntu-latest
