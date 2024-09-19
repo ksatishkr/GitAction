@@ -9,8 +9,8 @@ jobs:
         run: echo this is single line comment
       - name: multi-line comments
         run: |
-          echo this is for testing code
-               tetes, for testng perpose
+          echo this is for testing code,
+          echo test, for testing perpose
 
   ubuntu:
     runs-on: ubuntu-latest
