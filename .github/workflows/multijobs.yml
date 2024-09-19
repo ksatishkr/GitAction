@@ -1,5 +1,14 @@
 name: multiJobs action
-on: [push]
+on: 
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+env:
+  myName: "satish"
+  age: 22
+  from: "bihar"
+
 jobs: 
   windows:
     runs-on: windows-latest
@@ -7,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: single line comment
         run: echo this is single line comment
-      - name: multi-line comments
+      - name: ${{env.myName},{env.age},{env.from}}
         run: |
           echo this is for testing code,
           echo test, for testing perpose
