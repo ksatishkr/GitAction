@@ -31,6 +31,7 @@ jobs:
         run: echo this is multiple line comments
 
   macos: 
+    needs: [ubuntu,windows]
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
