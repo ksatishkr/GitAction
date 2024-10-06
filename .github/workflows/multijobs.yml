@@ -1,42 +1,13 @@
-name: multiJobs action
+name: testing workflow_dispatch
 on: 
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-env:
-  myName: "satish"
-  age: 22
-  from: "bihar"
+  workflow_dispatch:
 
-jobs: 
-  windows:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: single line comment
-        run: echo this is single line comment
-      - name: ${{env.myName}}
-        run: |
-          echo this is for testing code,
-          echo test, for testing perpose
-
-  ubuntu:
+jobs:
+  job1:
     runs-on: ubuntu-latest
+    name: testing
     steps:
-      - uses: actions/checkout@v2
-      - name: single line comment
-        run: echo this is single line comments
-      - name: multiple-line runner
-        run: echo this is multiple line comments
-
-  macos: 
-    needs: [ubuntu,windows]
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: single line comment
-        run: echo this is single line comment
-      - name: multiple line comments
-        run: echo this is 
-      
+      - run: echo testing
+      - run: |
+          echo hello
+          echo this for testing perpose
